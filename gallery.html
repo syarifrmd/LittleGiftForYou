@@ -21,7 +21,9 @@
     <script defer src="./scripts.js"></script>
   </head>
   <body class="theme-doves bg-neutral-800 text-white">
-
+<audio id="bg-music" autoplay muted loop>
+  <source src="https://raw.githubusercontent.com/syarifrmd/LittleGiftForYou/2f74faee5ae76027ce678880c5950d67f134f0be/music.MP3" type="audio/mpeg">
+</audio>
     <header class="app__header app__header--sticky bg-neutral-900/60 backdrop-blur border-b border-neutral-700">
       <a class="brand text-white" href="./index.html" aria-label="Kembali">
         <span class="brand__text text-white">Kembali</span>
@@ -65,4 +67,13 @@ Thank you for being a home for my little heart. May our memories become a good h
       <small>With love • Riif</small>
     </footer>
   </body>
+  <script>
+  const audio = document.getElementById("bg-music");
+  
+  // Tunggu sampai metadata sudah siap (durasi dll. sudah kebaca)
+  audio.addEventListener("loadedmetadata", function() {
+    audio.currentTime = 115; // 1 menit 55 detik = 115 detik
+    audio.play();
+  });
+  </script>
 </html>
