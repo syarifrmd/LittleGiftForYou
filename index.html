@@ -24,14 +24,15 @@
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
     <script defer src="./scripts.js"></script>
+    
   </head>
   <body class="theme-doves">
   <div class="bg-doves" aria-hidden="true"></div>
 
   <!-- Background music (provide your audio file in project root or adjust src) -->
-  <video id="bg-music" controls="" autoplay="" name="media">
-    <source src="https://github.com/syarifrmd/LittleGiftForYou/blob/2f74faee5ae76027ce678880c5950d67f134f0be/music.MP3" type="audio/mp3">
-  </video>
+  <audio id="bg-music" autoplay muted loop>
+  <source src="https://raw.githubusercontent.com/syarifrmd/LittleGiftForYou/2f74faee5ae76027ce678880c5950d67f134f0be/music.MP3" type="audio/mpeg">
+  </audio>
 
   <!-- Pre-Splash screens -->
   <section id="presplash" class="fixed inset-0 z-50">
@@ -107,4 +108,11 @@ Selamatt ulangg tahunn ke-20, Yeayyy udahh 20 tahunnn waaa pacarkuu udah kepala 
    <p class="text-black font-bold absolute bottom-8 right-4">Klik atasku ini <br> kalo musiknya double</p>
   <button id="audioToggle" class="audio-toggle absolute bottom-24 right-4" aria-label="Toggle musik" hidden>🔇</button>
   </body>
+    <script>
+  document.addEventListener("click", function() {
+    let audio = document.getElementById("bg-music");
+    audio.muted = false; // lepas mute setelah interaksi user
+    audio.play();
+  });
+    </script>
 </html>
