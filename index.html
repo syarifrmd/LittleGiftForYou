@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f7f8fb" />
+    <title>Happy Birthday, Sayangku ✨🕊️</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,700&family=Poppins:wght@700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="./styles.css" />
+
+    <!-- Tailwind (no preflight to avoid overriding existing styles) -->
+    <script>
+      window.tailwind = {};
+      window.tailwind.config = { corePlugins: { preflight: false } };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Animations & Effects -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script defer src="./scripts.js"></script>
+  </head>
+  <body class="theme-doves">
+  <div class="bg-doves" aria-hidden="true"></div>
+
+  <!-- Background music (provide your audio file in project root or adjust src) -->
+  <audio id="bg-music" src="music.mp3" preload="auto" autoplay muted loop></audio>
+
+  <!-- Pre-Splash screens -->
+  <section id="presplash" class="fixed inset-0 z-50">
+    <!-- Splash 1: bg hitam, text putih Poppins Bold -->
+    <div class="slide1 w-full h-full bg-black text-white flex items-center justify-center">
+      <h1 class="text-4xl md:text-5xl font-bold" style="font-family:'Poppins', Inter, system-ui, sans-serif">Haii Adikk</h1>
+    </div>
+    <!-- Splash 2: default bg (transparan) dengan teks putih -->
+    <div class="slide2 w-full h-full bg-black text-white flex items-center justify-center">
+      <h1 class="text-2xl md:text-4xl font-semibold">Its a speciall day for uuu</h1>
+    </div>
+    <!-- Splash 3: bg grey, tulisan putih -->
+    <div class="slide3 hidden w-full h-full bg-neutral-800 text-white flex items-center justify-center">
+      <h1 class="text-3xl md:text-4xl font-semibold">Marii rayakannn</h1>
+    </div>
+  </section>
+
+    <main id="app" class="app">
+
+      <!-- Envelope Intro -->
+  <section id="envelope-section" class="section section--center section--hero-bg">
+        <div class="envelope" id="envelope" aria-live="polite">
+          <div class="envelope__flap" id="envelopeFlap"></div>
+          <div class="envelope__body"></div>
+          <div class="envelope__letter">
+            <p class="letter__title">Open it</p>
+            <button id="openBtn" class="btn btn--primary" aria-label="Buka amplop">Sentuhh aku sayangg!!</button>
+          </div>
+        </div>
+        <p class="text-white">tap amplop untuk membuka</p>
+      </section>
+
+      <!-- 3D Grid Carousel -->
+      <section id="grid-section" class="section hidden bg-neutral-800" aria-hidden="true">
+        <h1 class="title text-white">TADAAA BIBIBB</h1>
+        <div class="carousel3d" id="carousel3d">
+          <div class="carousel3d__stage" id="carouselStage">
+            <figure class="carousel3d__cell"><img src="Images/20250703_131732.jpg" alt="Memori 1" loading="lazy" /></figure>
+            <figure class="carousel3d__cell"><img src="Images/20250727_160944.jpg" alt="Memori 2" loading="lazy" /></figure>
+            <figure class="carousel3d__cell"><img src="Images/20250905_151055.jpg" alt="Memori 3" loading="lazy" /></figure>
+            <figure class="carousel3d__cell"><img src="Images/20250823_220415.jpg" alt="Memori 4" loading="lazy" /></figure>
+          </div>
+          <div class="carousel3d__nav">
+            <button id="prev3d" class="btn btn--primary carousel3d__btn" aria-label="Sebelumnya">‹</button>
+            <button id="next3d" class="btn btn--primary carousel3d__btn" aria-label="Berikutnya">›</button>
+          </div>
+        </div>
+        <div class="carousel-caption text-white">
+          <p>Terima kasih sudah jadi rumah untuk 3 tahun inii</p>
+        </div>
+        <div class="cta">
+          <button id="splashBtn" class="btn bg-neutral-300 text-neutral">Centuh akuu</button>
+        </div>
+        <br><br><br><br><br><br><br><br><br><br>
+      </section>
+
+      <!-- Birthday Splash / Trumpet + Confetti -->
+      <section id="splash-section" class="overlay hidden" aria-hidden="true">
+        <canvas id="confetti-canvas" class="overlay__canvas"></canvas>
+        <div class="splash-card">
+          <div class="splash-emoji" aria-hidden="true"></div>
+          <h2 class="splash-title">Happy birthdayy sayangggku cintakuu yang ke-20</h2>
+          <p class="splash-note">HAII SAYANGGKUUU!!🤍 <br>
+Selamatt ulangg tahunn ke-20, Yeayyy udahh 20 tahunnn waaa pacarkuu udah kepala dua. Umm maaf yaa sayangg di hari ulang tahunmu dan ulang tahun ke 3 bersama ku inii aku belum bisa memberiikan amu sebuah kadoo, okee masukk dalam sesi doa yaa..., semogaa sayanggkuu paling utama. Diberikan kesehatann yang sehatt fisik dan batin dan apapun ituu sehatt aamiin.., semoga pacarku diberikann kelancaran dalam menjalani kehidupan dan berkarir, semogaa pacarku semakinn pinterrr dan dewasaa, semoga pacarkuu menjadii pribadii dan membangakan kedua orang tuaa... nahh cukup doa nyaa, doa nya tambah nanti.
+🕊️</p>
+          <button id="nextBtn" class="btn btn--primary mt-8">Lanjutt Siniiii</button>
+        </div>
+        <div class="floating-hearts" aria-hidden="true"></div>
+      </section>
+    </main>
+
+  <!-- Floating audio toggle -->
+   <p class="text-black font-bold absolute bottom-8 right-4">Klik atasku ini <br> kalo musiknya double</p>
+  <button id="audioToggle" class="audio-toggle absolute bottom-24 right-4" aria-label="Toggle musik" hidden>🔇</button>
+  </body>
+</html>
